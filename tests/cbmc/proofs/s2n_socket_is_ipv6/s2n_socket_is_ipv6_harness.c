@@ -18,7 +18,6 @@ void s2n_socket_is_ipv6_harness()
   int result = s2n_socket_is_ipv6(fd, ipv6);
 
   /* Post-condition. */
-/*   assert(S2N_IMPLIES(result == S2N_SUCCESS, (ipv6 != NULL && (*ipv6 == 0 || *ipv6 == 1))));
-  assert(S2N_IMPLIES(ipv6 == NULL, result != S2N_SUCCESS)); */
-  assert(result == S2N_SUCCESS);
+  assert(S2N_IMPLIES(result == S2N_SUCCESS, (ipv6 != NULL && (*ipv6 == 0 || *ipv6 == 1))));
+  assert(S2N_IMPLIES(ipv6 == NULL, result != S2N_SUCCESS));
 }
