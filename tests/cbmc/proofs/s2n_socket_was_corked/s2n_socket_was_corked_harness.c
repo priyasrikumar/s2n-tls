@@ -10,9 +10,9 @@
 
 void s2n_socket_was_corked_harness()
 {
-  struct s2n_socket_write_io_context *cbmc_allocate_s2n_socket_write_io_context();
   /* Non-deterministic inputs. */
   struct s2n_connection *s2n_connection = malloc(sizeof(*s2n_connection));
+  struct s2n_socket_write_io_context *cbmc_allocate_s2n_socket_write_io_context();
   if (s2n_connection != NULL) {
     s2n_connection->send_io_context = cbmc_allocate_s2n_socket_write_io_context();
   }

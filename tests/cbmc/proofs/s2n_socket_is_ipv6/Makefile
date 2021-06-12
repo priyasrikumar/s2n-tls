@@ -14,6 +14,7 @@ REMOVE_FUNCTION_BODY +=
 UNWINDSET +=
 
 PROOF_SOURCES += $(PROOFDIR)/$(HARNESS_FILE)
+PROOF_SOURCES += $(PROOF_SOURCE)/make_common_datastructures.c
 PROOF_SOURCES += $(PROOF_STUB)/getpeername.c
 PROOF_SOURCES += $(PROOF_STUB)/s2n_calculate_stacktrace.c
 

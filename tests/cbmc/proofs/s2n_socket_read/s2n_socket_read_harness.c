@@ -10,8 +10,8 @@
 
 void s2n_socket_read_harness()
 {
-  struct s2n_socket_read_io_context *cbmc_allocate_s2n_socket_read_io_context();
   /* Non-deterministic inputs. */
+  struct s2n_socket_read_io_context *cbmc_allocate_s2n_socket_read_io_context();
   void *io_context = cbmc_allocate_s2n_socket_read_io_context();
   const uint8_t *buf = malloc(sizeof(*buf));
   uint32_t len;
@@ -20,6 +20,6 @@ void s2n_socket_read_harness()
   int result = s2n_socket_read(io_context, buf, len);
 
   /* Post-condition. */
-  assert(S2N_IMPLIES(result >= S2N_SUCCESS, io_context != NULL));
-  assert(S2N_IMPLIES(io_context == NULL, result < S2N_SUCCESS));
+  assert(S2N_IMPLIES(result >= 0, io_context != NULL));
+  assert(S2N_IMPLIES(io_context == NULL, result != S2N_SUCCESS));
 }
