@@ -20,7 +20,7 @@
 #include <sys/socket.h>
 
 /* https://pubs.opengroup.org/onlinepubs/009695399/functions/getsockopt.html */
-int getsockopt(int socket, int level, int option_name, void *option_value, socklen_t option_len)
+int getsockopt(int socket, int level, int option_name, void *option_value, socklen_t *option_len)
 {
     /* assert(socket >= -1 && socket <= 65536); // File descriptor limit. 
     assert(level == IPPROTO_IP || level == IPPROTO_IPV6 || level == IPPROTO_ICMP || level == IPPROTO_RAW || level == IPPROTO_TCP || level == IPPROTO_UDP); 
